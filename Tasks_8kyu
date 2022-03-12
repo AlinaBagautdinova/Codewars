@@ -1,0 +1,156 @@
+1. Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+
+public class Kata {
+    public static int quarterOf(int month) {
+      int k =0;
+        if (month > 0 && month < 4) k = 1;
+        if (month > 3 && month < 7) k = 2;
+        if (month > 6 && month < 10) k = 3;
+        if (month > 9 && month < 13) k = 4;
+      return k;
+    }
+}
+
+
+2. You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+   If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+public class Solution {
+    public static int areaOrPerimeter (int l, int w) {
+        if(l == w) return l * w;
+      else return (l + w) * 2;
+    }
+}
+
+
+3. Given a list of integers, determine whether the sum of its elements is odd or even.
+   Give your answer as a string matching "odd" or "even".
+   If the input array is empty consider it as: [0] (array with a zero).
+   
+public class Codewars {
+  public static String oddOrEven (int[] array) {
+  int sum = 0;
+    for (int i = 0; i < array.length; i++) {
+      sum = sum + array[i];
+    }
+    if (sum % 2 == 0) return "even";
+    else return "odd";
+  }
+}
+
+
+4. Your function takes two arguments:
+   current father's age (years)
+   current age of his son (years)
+   Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+   
+public class TwiceAsOld{
+  public static int TwiceAsOld(int dadYears, int sonYears){
+    return Math.abs((dadYears - 2 * sonYears));
+  }
+}
+
+
+5. I have a cat and a dog. I got them at the same time as kitten/puppy. That was humanYears years ago. Return their respective ages now as [humanYears,catYears,dogYears]
+   NOTES: humanYears >= 1, humanYears are whole numbers only
+   Cat Years
+15 cat years for first year
++9 cat years for second year
++4 cat years for each year after that
+   Dog Years
+15 dog years for first year
++9 dog years for second year
++5 dog years for each year after that
+
+public class Dinglemouse {
+  public static int[] humanYearsCatYearsDogYears(final int humanYears) {
+    int catYears = 0;
+    int dogYears = 0;
+    if (humanYears == 1) {
+      catYears = catYears + 15;
+      dogYears = dogYears + 15;
+    }
+    if (humanYears == 2) {
+      catYears = catYears + 24;
+      dogYears = dogYears + 24;
+    }
+    if(humanYears > 2) {
+      catYears = 24 + 4 * (humanYears - 2);
+      dogYears = 24 + 5 * (humanYears - 2);
+    }
+    return new int[]{humanYears, catYears, dogYears};
+  }
+}
+
+
+6. I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help.
+   P.S. Each array includes only integer numbers. Output is a number too.
+
+public class Sum {
+  public static int arrayPlusArray(int[] arr1, int[] arr2) {
+    int sum = 0;
+    for (int i = 0; i < arr1.length; i++) {
+      sum = sum + arr1[i];
+    }
+    for (int i = 0; i < arr2.length; i++) {
+      sum = sum + arr2[i];
+    }
+    return sum;
+  }
+}
+
+
+7. Return Values
+   1 if a, b and c form a pythagorean triple
+   0 if a, b and c do not form a pythagorean triple
+   
+import java.util.Arrays;
+public class PythagoreanTriple {
+  public int pythagoreanTriple(int[] triple){
+    int c = triple[0] * triple[0];
+    int a = triple[1] * triple[1];
+    int b = triple[2] * triple[2];
+    if ((c == a + b) || (a == c + b) || (b == c + a) return 1;
+    else return 0;
+  }
+}
+
+
+8. You are given two interior angles (in degrees) of a triangle. Write a function to return the 3rd.
+
+public class ThirdAngle {
+    public static int otherAngle(int angle1, int angle2) {
+        return (180 - angle1 - angle2);
+    }
+}
+
+
+9. Return the Nth Even Number
+
+public class Num {
+  public static int nthEven(int n) {
+  return (2 * n - 2);
+  }
+}
+
+
+10. The code provided has a method plus100 which is supposed to return the number of the parameter incremented by 100. But it's not working properly.
+    Task: Fix the code so we can all go home early.
+    
+public class Dinglemouse {
+
+  public static final Dinglemouse INST = new Dinglemouse();
+      
+  private static int ONE_HUNDRED = 100;
+
+  private final int value; 
+
+  public Dinglemouse() { //исправила здесь на public
+    value = ONE_HUNDRED;
+  }
+  
+  public int plus100(int n) {
+    return value + n;
+  }
+  
+}
