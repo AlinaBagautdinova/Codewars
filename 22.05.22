@@ -1,0 +1,94 @@
+1. Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". 
+   Input will always be valid, i.e. no negative integers.
+   
+   class Kata {
+  public static String countingSheep(int num) {
+    String s = "";
+    int a = 1;
+    while (num != 0){
+      
+      s = s +"" +a+ " sheep...";
+      num = num - 1;
+      a = a + 1;
+    }
+    return s;
+  }
+}
+
+2. Create a function that finds the integral of the expression passed.
+
+public class Kata {
+
+    public static String integrate(int coefficient, int exponent) {
+      String s;
+      int e = exponent+1;
+      int c = coefficient/e;
+      s=c + "x^" + e;
+      
+      return s;
+    }
+}
+
+3. Given a year, return the century it is in.
+
+public class Solution {
+  public static int century(int number) {
+    if(number%100 == 0) return number/100;
+    else return number/100 + 1;
+  }
+}
+
+4. * 'R', [3, 2, 1, 2]      ->  [1, 2, 2, 3]
+   * 'L', [1, 4, 5, 3, 5 ]  ->  [5, 5, 4, 3, 1]
+   
+   public class Kata {
+  public static int[] flip(char dir, int[] arr) {
+    if(dir =='R') {
+      boolean sorted = false;
+    int temp;
+    while(!sorted) {
+        sorted = true;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i+1]) {
+                temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                sorted = false;
+            }
+        }
+    }
+}
+    
+  else {
+    boolean sorted = false;
+    int temp;
+    while(!sorted) {
+        sorted = true;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i+1]) {
+                temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                sorted = false;
+            }
+        }
+    }
+}
+    return arr;
+  }
+}
+
+5. CamelCase Method
+
+public class Solution {
+
+    public static String camelCase(String str) {
+      String[] separated = str.split(" ");
+      String strNew="";
+      for (int i=0; i<separated.length; i++) {
+        separated[i]=separated[i].substring(0, 1).toUpperCase() + separated[i].substring(1);
+        strNew += separated[i];
+      }
+      return strNew;
+    }
+}
