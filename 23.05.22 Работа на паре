@@ -1,0 +1,44 @@
+1. To square(root) or not to square(root)
+
+public class Kata
+{
+  public static int[] squareOrSquareRoot(int[] array)
+  {
+    for (int i=0; i<array.length; i++) {
+      if (Math.sqrt(array[i])%1==0) {
+        array[i] = (int)Math.sqrt(array[i]);
+      }
+      else array[i] = (int)Math.pow(array[i],2);
+    }
+    return array;
+  }
+}
+
+
+2. Volume of a Cuboid
+
+public class Kata {
+  public static double getVolumeOfCuboid(final double length, final double width, final double height) {
+    return length * width * height;
+  } 
+}
+
+
+3. Convert a String to a Number!
+
+public class StringToNumber {
+  public static int stringToNumber(String str) {
+    return Integer.parseInt(str);
+  }
+}
+
+
+4. Return Negative
+
+public class Kata {
+  public static int makeNegative(final int x) {
+    if (x==0) return 0; 
+    if (x>0) return -x;
+    else return x;
+  }
+}
