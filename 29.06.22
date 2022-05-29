@@ -1,0 +1,52 @@
+1. Complete the function that takes two integers (a, b, where a < b) and return an array of all integers 
+   between the input parameters, including them.
+
+public class Kata {
+  public static int[] between(int a, int b) {
+    int[] arr = new int[b - a + 1];
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = a + i;
+    }
+    return arr;
+  }
+}
+
+2. Convert a Boolean to a String
+
+public class BooleanToString {
+  public static String convert(boolean b){
+    if(b) {
+      return "true";
+    } else {
+      return "false";
+    }
+  }
+}
+
+3. Remove String Spaces
+
+public class Kata {
+    public static String noSpace(final String x) {
+      String[] separated = x.split(" ");
+      String strNew="";
+      for (int i=0; i<separated.length; i++){
+        strNew +=separated[i];
+      }
+      return strNew;
+    }
+}
+
+4. You receive an array with your peers' test scores. Now calculate the average and compare your score!
+   Return True if you're better, else False!
+
+public class Kata {
+  public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+    int sum = 0;
+    for (int i = 0; i < classPoints.length; i++) {
+      sum += classPoints[i];
+    }
+    int valueAverage = (sum + yourPoints) / (classPoints.length + 1);
+    if (yourPoints > valueAverage) return true;
+    else return false;
+  }
+}
